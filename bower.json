@@ -1,0 +1,13 @@
+{
+  "name": "your-app",
+  "version": "0.0.1",
+  "main": "public/app.js",
+  "dependencies": {
+    "bootstrap": "v4.0.0-alpha"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": "[]
+    }
+  }
+}

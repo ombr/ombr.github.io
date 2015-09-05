@@ -1,0 +1,26 @@
+{
+  "name": "your-app",
+  "description": "Description",
+  "author": "Your Name",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "start": "brunch watch --server"
+  },
+  "dependencies": {
+    "auto-reload-brunch": ">= 1.0 < 1.9",
+    "clean-css-brunch": ">= 1.0 < 1.9",
+    "coffee-script-brunch": "^1.8.2",
+    "css-brunch": ">= 1.0 < 1.9",
+    "jaded-brunch": "^1.7.13",
+    "javascript-brunch": ">= 1.0 < 1.9",
+    "uglify-js-brunch": ">= 1.0 < 1.9"
+  },
+  "devDependencies": {
+    "brunch": "^1.8.5",
+    "sass-brunch": "^1.8.11"
+  }
+}
