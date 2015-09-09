@@ -8,8 +8,9 @@ exports.config =
       joinTo:
         'js/templates.js': /.+\.jade$/
   plugins:
-    static_jade:
-      path: [/app/]
+    jaded:
+      jade:
+        pretty: false
     sass:
       options:
-        includePaths: ['bower_components/bootstrap/scss']
+        includePaths: ['bower_components/']

@@ -1,31 +1,93 @@
-@import "bootstrap"
-#s1
-  background: #ecf0f1
-#s2
+@import "bootstrap/scss/variables"
+$body-color: #2c3e50
+@import "bootstrap/scss/mixins"
+
+// // Reset and dependencies
+@import "bootstrap/scss/normalize"
+@import "bootstrap/scss/print"
+
+// Core CSS
+@import "bootstrap/scss/reboot"
+@import "bootstrap/scss/type"
+@import "bootstrap/scss/images"
+// @import "bootstrap/scss/code"
+@import "bootstrap/scss/grid"
+// @import "bootstrap/scss/tables"
+// @import "bootstrap/scss/forms"
+// @import "bootstrap/scss/buttons"
+
+.wf-ubuntu-n4-active
+  body
+    font-family: Ubuntu
+// .container
+//   background: white
+//   .animate &,
+//   .summary &
+//     background: none
+.c-hello
+  // background: #ecf0f1
+  padding: $grid-gutter-width 0
+.c-hello-title
+  //margin-top: 2em
+.c-hello-subtitle
+  //margin-top: 1em
+#experiences
+  background: white
   background: #1abc9c
-#s3
+#education
   background: #e67e22
-#s4
-  background: #9b59b6
-#s5
+#fun
   background: #f1c40f
-body
-  font-size: 0px
-.summary
-  section
-    width: 40%
-    padding: 2% 5%
-    height: 20%
-    overflow-y: hidden
-    min-height: 0
-.animate
-  section
+#more
+  background: #D24D57
+#skills
+  background: #9b59b6
+  //color: #ecf0f1
+#technologies
+  background: #2ecc71
+
+.c-mosaic
+  .summary &
+    font-size: 0
+.c-mosaic-titleshort
+  display: none
+  .summary &
+    display: block
+.c-mosaic-titlefull
+  .summary &
+    display: none
+.c-mosaic-title
+  margin: $grid-gutter-width 0
+.c-mosaic-content
+  .summary &,
+  .animate &
+    display: none
+.c-mosaic-summary
+  display: none
+  .summary &,
+  .animate &
+    display: block
+.c-mosaic-item
+  .summary &
+    display: inline-block
+    font-size: $font-size-root
+    overflow: hidden
+    width: 50%
+    height: 12em
+  .animate &
     position: absolute
-section
-  //@include transition(all 2.0s ease-in-out)
-  font-size: 14px
-  min-height: 300px
-  padding: 2% 5%
-  width: 100%
-  display: inline-block
-  background: pink
+.c-mosaic-subtitle
+  @include media-breakpoint-down(xs)
+    font-size: 1em
+
+
+
+
+
+.c-experience-details
+  @extend .small
+
+// .media, .bd {overflow:hidden _overflow:visible zoom:1}
+// .media .img {float:left margin-right: 10px}
+// .media .img img{display:block}
+// .media .imgExt{float:right margin-left: 10px}
