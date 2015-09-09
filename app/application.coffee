@@ -69,5 +69,5 @@ App =
         $(".c-mosaic").addClass("animate")
         $.Velocity.RunSequence(animation)
       $body.on 'click', '.c-mosaic-item', animate
-      # $body.addClass('summary')
+      $body.addClass('summary')
 module.exports = App
