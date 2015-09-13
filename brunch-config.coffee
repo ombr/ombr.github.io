@@ -18,7 +18,7 @@ exports.config =
       network: ['*']
       fallback: {}
     imageoptimizer:
-        smushit: true
+        smushit: false
         path: 'images'
   conventions:
     assets: /(assets|font)/
