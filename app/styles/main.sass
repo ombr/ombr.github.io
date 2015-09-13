@@ -17,7 +17,7 @@ $green:     #859900
 $border-radius:          0 !default
 $border-radius-lg:       0 !default
 $border-radius-sm:       0 !default
-$body-color: $base00
+$body-color: $base01
 $body-bg: white
 
 $gray-dark: $base02
@@ -32,8 +32,8 @@ $brand-info: $cyan
 $brand-warning: $orange
 $brand-danger: $red
 
-// $btn-secondary-bg: $base2
-// $btn-secondary-border: $base02
+//$btn-secondary-bg: $base01
+$btn-secondary-border: $base01
 
 $font-family-monospace:      ubuntu_monoregular, Menlo, Monaco, Consolas, "Courier New", monospace
 $font-family-base:           $font-family-monospace
@@ -129,6 +129,8 @@ $font-family-base:           $font-family-monospace
   .summary &
     display: none
 .c-mosaic-title
+  text-transform: uppercase
+  color: $base03
   margin: $grid-gutter-width 0
 .c-mosaic-content
   .summary &,
@@ -163,8 +165,13 @@ $font-family-base:           $font-family-monospace
 
 .c-hello
   position: relative
+.c-hello-image
+  width: 100%
 .c-hello-content
-  position: absolute
-  top: 30%
-  left: 57%
-  right: 0
+  @media(min-width: 830px)
+    position: absolute
+    top: 30%
+    left: 57%
+    right: 20px
+    @media(max-width: 1000px)
+      top: 10%
