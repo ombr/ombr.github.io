@@ -1,0 +1,24 @@
+CACHE MANIFEST
+# f6a818c00b52caa5e325a40e03899dd81a82a89b
+
+NETWORK:
+*
+
+FALLBACK:
+
+
+CACHE:
+./app.css
+./app.css.map
+./app.js
+./app.js.map
+./bandeau.jpg
+./fonts/FontAwesome.otf
+./fonts/fontawesome-webfont.eot
+./fonts/fontawesome-webfont.svg
+./fonts/fontawesome-webfont.ttf
+./fonts/fontawesome-webfont.woff
+./fonts/fontawesome-webfont.woff2
+./images/bandeau.jpg
+./images/luc.boissaye.jpg
+./index.html
