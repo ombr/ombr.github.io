@@ -34,6 +34,28 @@ html(lang="en" manifest="/appcache.appcache")
       a.btn.btn-link
         i.fa.fa-close
     .c-hello
+      picture.c-hello-image
+        - var imageurl = 'images/bandeau.jpg?w='
+        //- mobile and co :
+        - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=crop&crop=faces&w='
+        each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
+          - srcset = srcset + imageurl + width + "&h="+ width + " " + width + "w, ";
+        - srcset = srcset + imageurl + "5000 5000w";
+        source(media="(max-width: 830px)" sizes="100vw" srcset="#{srcset}")
+
+        //- Default source for desktop
+        - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
+        - var srcset="";
+        each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
+          - srcset = srcset + imageurl + width + " " + width + "w, ";
+        - srcset = srcset + imageurl + "5000 5000w";
+        source(media="" srcset="#{srcset}" sizes="100vw")
+        img(
+          alt='Luc Boissaye'
+          src="#{imageurl}2000"
+          srcset="#{srcset}"
+          sizes="100vw"
+        )
       .c-hello-content
         h1.c-hello-title
           | Bonjour, my name is Luc !
@@ -50,18 +72,6 @@ html(lang="en" manifest="/appcache.appcache")
           =" "
           a.btn.btn-secondary-outline.btn-lg(href="https://github.com/ombr" target="_blank")
             i.fa.fa-github
-      - var imageurl = 'images/bandeau.jpg?w='
-      - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
-      - var srcset="";
-      each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
-        - srcset = srcset + imageurl + width + " " + width + "w, ";
-      - srcset = srcset + imageurl + "5000 5000w";
-      img.c-hello-image(
-        alt='Luc Boissaye'
-        src="#{imageurl}2000"
-        srcset="#{srcset}"
-        sizes="100vw"
-      )
     .c-mosaic
       section.c-mosaic-item.c-experience#experiences
         .container

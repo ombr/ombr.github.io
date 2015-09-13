@@ -10,7 +10,7 @@ exports.config =
   plugins:
     jaded:
       jade:
-        pretty: true
+        pretty: false
     sass:
       options:
         includePaths: ['bower_components/']
