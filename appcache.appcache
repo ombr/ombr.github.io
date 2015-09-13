@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# f6a818c00b52caa5e325a40e03899dd81a82a89b
+# 75d6cce582fe42668f30b5aabc912aa735cdd006
 
 NETWORK:
 *
@@ -8,11 +8,32 @@ FALLBACK:
 
 
 CACHE:
+./android-chrome-144x144.png
+./android-chrome-192x192.png
+./android-chrome-36x36.png
+./android-chrome-48x48.png
+./android-chrome-72x72.png
+./android-chrome-96x96.png
 ./app.css
 ./app.css.map
 ./app.js
 ./app.js.map
-./bandeau.jpg
+./apple-touch-icon-114x114.png
+./apple-touch-icon-120x120.png
+./apple-touch-icon-144x144.png
+./apple-touch-icon-152x152.png
+./apple-touch-icon-180x180.png
+./apple-touch-icon-57x57.png
+./apple-touch-icon-60x60.png
+./apple-touch-icon-72x72.png
+./apple-touch-icon-76x76.png
+./apple-touch-icon-precomposed.png
+./apple-touch-icon.png
+./browserconfig.xml
+./favicon-16x16.png
+./favicon-32x32.png
+./favicon-96x96.png
+./favicon.ico
 ./fonts/FontAwesome.otf
 ./fonts/fontawesome-webfont.eot
 ./fonts/fontawesome-webfont.svg
@@ -21,4 +42,11 @@ CACHE:
 ./fonts/fontawesome-webfont.woff2
 ./images/bandeau.jpg
 ./images/luc.boissaye.jpg
+./images/luc.boissaye2.jpg
 ./index.html
+./manifest.json
+./mstile-144x144.png
+./mstile-150x150.png
+./mstile-310x150.png
+./mstile-310x310.png
+./mstile-70x70.png
