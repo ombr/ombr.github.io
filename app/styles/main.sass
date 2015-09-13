@@ -1,5 +1,44 @@
+$base03:    #002b36
+$base02:    #073642
+$base01:    #586e75
+$base00:    #657b83
+$base0:     #839496
+$base1:     #93a1a1
+$base2:     #eee8d5
+$base3:     #fdf6e3
+$yellow:    #b58900
+$orange:    #cb4b16
+$red:       #dc322f
+$magenta:   #d33682
+$violet:    #6c71c4
+$blue:      #268bd2
+$cyan:      #2aa198
+$green:     #859900
+$border-radius:          0 !default
+$border-radius-lg:       0 !default
+$border-radius-sm:       0 !default
+$body-color: $base00
+$body-bg: white
+
+$gray-dark: $base02
+$gray: $base01
+$gray-light: $base00
+$gray-lighter: $base0
+$gray-lightest: $base1
+
+$brand-primary: $blue
+$brand-success: $green
+$brand-info: $cyan
+$brand-warning: $orange
+$brand-danger: $red
+
+// $btn-secondary-bg: $base2
+// $btn-secondary-border: $base02
+
+$font-family-monospace:      ubuntu_monoregular, Menlo, Monaco, Consolas, "Courier New", monospace
+$font-family-base:           $font-family-monospace
+
 @import "bootstrap/scss/variables"
-$body-color: #2c3e50
 @import "bootstrap/scss/mixins"
 
 // // Reset and dependencies
@@ -10,41 +49,74 @@ $body-color: #2c3e50
 @import "bootstrap/scss/reboot"
 @import "bootstrap/scss/type"
 @import "bootstrap/scss/images"
-// @import "bootstrap/scss/code"
 @import "bootstrap/scss/grid"
-// @import "bootstrap/scss/tables"
-// @import "bootstrap/scss/forms"
-// @import "bootstrap/scss/buttons"
+@import "bootstrap/scss/buttons"
+@import "bootstrap/scss/nav"
+@import "bootstrap/scss/navbar"
 
-.wf-ubuntu-n4-active
-  body
-    font-family: Ubuntu
-// .container
+
+@import "font-awesome/scss/font-awesome"
+
+.c-close
+  display: none
+  position: fixed
+  top: 0
+  right: 0
+  z-index: 100
+  a
+    color: $body-color
+  .summary &,
+  .animate &
+    display: none
+
+// .row
+//   margin: 0 10px
 //   background: white
 //   .animate &,
 //   .summary &
 //     background: none
-.c-hello
-  // background: #ecf0f1
-  padding: $grid-gutter-width 0
-.c-hello-title
-  //margin-top: 2em
-.c-hello-subtitle
-  //margin-top: 1em
-#experiences
-  background: white
-  background: #1abc9c
-#education
-  background: #e67e22
-#fun
-  background: #f1c40f
-#more
-  background: #D24D57
-#skills
-  background: #9b59b6
-  //color: #ecf0f1
-#technologies
-  background: #2ecc71
+
+
+//Flat :
+// #experiences
+//   background: #1abc9c
+// #education
+//   background: #e67e22
+// #fun
+//   background: #f1c40f
+// #more
+//   background: #3498db
+// #skills
+//   background: #9b59b6
+// #technologies
+//   background: #2ecc71
+// Test adobe 1
+// #experiences
+//   background: #84ABE4
+// #education
+//   background: #80D5F2
+// #fun
+//   background: #C4C2B9
+// #more
+//   background: #0F90C3
+// #skills
+//   background: #F29E6D
+// #technologies
+//   background: #2ecc71
+
+// $light: 30%
+// #experiences
+//   background: lighten($blue, $light)
+// #education
+//   background: lighten($orange, $light)
+// #fun
+//   background: lighten($yellow, $light)
+// #more
+//   background: lighten($magenta, $light)
+// #skills
+//   background: lighten($red, $light)
+// #technologies
+//   background: lighten($violet, $light)
 
 .c-mosaic
   .summary &
@@ -69,6 +141,7 @@ $body-color: #2c3e50
     display: block
 .c-mosaic-item
   .summary &
+    cursor: pointer
     display: inline-block
     font-size: $font-size-root
     overflow: hidden
@@ -77,13 +150,8 @@ $body-color: #2c3e50
   .animate &
     position: absolute
 .c-mosaic-subtitle
-  @include media-breakpoint-down(xs)
+  @include media-breakpoint-down(sm)
     font-size: 1em
-
-
-
-
-
 .c-experience-details
   @extend .small
 
@@ -91,3 +159,12 @@ $body-color: #2c3e50
 // .media .img {float:left margin-right: 10px}
 // .media .img img{display:block}
 // .media .imgExt{float:right margin-left: 10px}
+
+
+.c-hello
+  position: relative
+.c-hello-content
+  position: absolute
+  top: 30%
+  left: 57%
+  right: 0

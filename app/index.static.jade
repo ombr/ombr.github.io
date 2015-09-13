@@ -1,32 +1,61 @@
 doctype html
+//- html(lang="en" manifest="/appcache.appcache")
 html(lang="en")
   head
     meta(content='black-translucent' name='apple-mobile-web-app-status-bar-style')
     meta(content='yes' name='apple-mobile-web-app-capable')
     meta(content='width=device-width, initial-scale=1.0' name='viewport')
     meta(content='#ffffff' name='theme-color')
-    title Luc Boissaye - I am passionate about creating software people use and discovering the world.
+    title Luc Boissaye - I am passionate about creating software people use and about discovering the world.
     link(rel="stylesheet" href="app.css")
   body
+    //-.container
+      .row
+        .col-xs-12
+          nav.navbar.navbar-light
+            a.navbar-brand(href='http://luc.boissaye.fr') Luc Boissaye
+    //-.c-close
+      a.btn.btn-link
+        i.fa.fa-close
     .c-hello
-      .container
-        .row
-          .col-sm-9.col-sm-push-3
-            h1.c-hello-title
-              | Bonjour, my name is Luc !
-            h2.c-hello-subtitle I am passionate about creating software people use and discovering the world.
-          .col-sm-3.col-sm-pull-9
-            img.img-responsive(src="luc.boissaye.jpg")
+      .c-hello-content
+        h1.c-hello-title
+          | Bonjour, my name is Luc !
+        h2.c-hello-subtitle I am passionate about creating software people use and about discovering the world.
+        p
+          a.btn.btn-secondary.btn-lg(href="http://www.google.com/recaptcha/mailhide/d?k=01_a2HOHLoiyuUDNqnhKZAEQ==&c=LKUn8S8RhBnptd6d_b7Ufw==" target="_blank")
+            i.fa.fa-envelope
+          |
+          a.btn.btn-secondary.btn-lg(href="https://twitter.com/ombr" target="_blank")
+            i.fa.fa-twitter
+          |
+          a.btn.btn-secondary.btn-lg(href="https://linkedin.com/in/lucboissaye" target="_blank")
+            i.fa.fa-linkedin
+          |
+          a.btn.btn-secondary.btn-lg(href="https://github.com/ombr" target="_blank")
+            i.fa.fa-github
+      - var imageurl = '//lucboissaye.imgix.net/lucboissaye.jpg?fit=clip&w='
+      - var imageurl = 'images/bandeau.jpg?w='
+      - var srcset="";
+      each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900]
+        - srcset = srcset + imageurl + width + " " + width + "w, ";
+      - srcset = srcset + imageurl + "2000 2000w";
+      img.img-responsive(
+        alt='Luc Boissaye'
+        src="images/luc.boissaye.jpg"
+        srcset="#{srcset}"
+        sizes="100vw"
+      )
     .c-mosaic
       section.c-mosaic-item.c-experience#experiences
         .container
           .row.c-mosaic-summary
             .col-sm-12
-              h1.c-mosaic-title Exp
+              h2.c-mosaic-title Jobs
               h3.c-mosaic-subtitle I worked for SharinPix, Agorize, Gutenberg Technology...
           .row.c-mosaic-content
             .col-sm-12
-              h1.c-mosaic-title  Experiences
+              h2.c-mosaic-title Jobs
             .col-sm-8
               .row
                 .col-sm-12
@@ -63,11 +92,11 @@ html(lang="en")
         .container
           .row.c-mosaic-summary
             .col-sm-12
-              h1.c-mosaic-title  Edu
+              h2.c-mosaic-title Studies
               h3.c-mosaic-subtitle I studied computer sciences and aplied mathematics...
           .row.c-mosaic-content
             .col-sm-12
-              h1.c-mosaic-title  Education
+              h2.c-mosaic-title  Studies
             .col-sm-12
               .eduction
                 h3 GRENOBLE INSTITUTE OF TECHNOLOGY - ENSIMAG
@@ -76,17 +105,16 @@ html(lang="en")
               p.more
                 |I learned computer sciences (algorithms, computer architecture, language theory, databases...) and mathematics (probabilities, statistics, analysis,...)
                 |I also participated in a research project(link) and made a semester in Singapore.
-              p.more
-                Before I did Scientific Preparatory class where I studied Math and Physics at lycee ORT in Strasbourg and had my Scientific Baccalauréat Speciality Mathematics, Option Engineering sciences, Mention Bien in Saint-Louis Alsace
+              p.more Before I did Scientific Preparatory class where I studied Math and Physics at lycee ORT in Strasbourg and had my Scientific Baccalauréat Speciality Mathematics, Option Engineering sciences, Mention Bien in Saint-Louis Alsace
       section.c-mosaic-item#skills
         .container
           .row.c-mosaic-summary
             .col-sm-12
-              h1.c-mosaic-title  Skills
+              h2.c-mosaic-title  Skills
               h3.c-mosaic-subtitle I can work on all part of an application...
           .row.c-mosaic-content
             .col-md-12
-              h1.c-mosaic-title Skills
+              h2.c-mosaic-title Skills
             .col-sm-4
               h3 Software
               p I am passionate about software developement techniques particularly test driven development and extreme programming.
@@ -113,39 +141,48 @@ html(lang="en")
         .container
           .row.c-mosaic-summary
             .col-sm-12
-              h1.c-mosaic-title Tech
+              h2.c-mosaic-title Tech
               h3.c-mosaic-subtitle My favorites tools...
           .row.c-mosaic-content
             .col-sm-12
-              h1.c-mosaic-title Technologies
+              h2.c-mosaic-title Technologies
             .col-sm-12
               p I like to create :
-                ul
-                  li develop RubyOnRails backend tested with rspec
-                  li use AngularJS to create fast single wepage app.
-                  li Style crossbrowser responsive webpage with sass, bourbon and bootstrap
-                  li Host fast and scalable applications on Heroku with Amazon cloudfront, route53 and S3
-                  li write scipts packed with regular expressions to improve my life
-                  li create mobile apps with ionic
+              ul
+                li develop RubyOnRails backend tested with rspec
+                li use AngularJS to create fast single wepage app.
+                li Style crossbrowser responsive webpage with sass, bourbon and bootstrap
+                li Host fast and scalable applications on Heroku with Amazon cloudfront, route53 and S3
+                li write scipts packed with regular expressions to improve my life
+                li create mobile apps with ionic
 
-      //-section#more.c-mosaic-item
+      section#more.c-mosaic-item
         .container
-          h1.c-mosaic-title More
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title Projects
+              h3.c-mosaic-subtitle I like to experiment during my free time...
           .row.c-mosaic-content
-            .col-sm-6
-              a(href="http://wwww.laboiteareves.fr") La boite a reves 
-            .col-sm-6
-              a(href="http://www.evlaa.com") Evlaa
-              a.more(href="http://www.studiocuicui.com") Studio Cuicui
+            .col-sm-12
+              h2.c-mosaic-title Projects
+            .col-sm-12
+              p.c-mosaic-subtitle I like to experiment during my free time, here are my last projects
+            .col-sm-12
+              p
+                a.btn.btn-secondary(href="http://wwww.laboiteareves.fr" target="_blank") La boite a reves
+                |
+                a.btn.btn-secondary(href="http://www.evlaa.com" target="_blank") Evlaa
+                |
+                a.btn.btn-secondary(href="http://www.studiocuicui.com" target="_blank") Studio Cuicui
       section#fun.c-mosaic-item
         .container
           .row.c-mosaic-summary
             .col-sm-12
-              h1.c-mosaic-title Fun
+              h2.c-mosaic-title Fun
               h3.c-mosaic-subtitle I am doing more than coding...
           .row.c-mosaic-content
             .col-sm-12
-              h1.c-mosaic-title Fun
+              h2.c-mosaic-title Fun
             .col-sm-12
               p
                 | Travelling ( learned Spanish for 4 months in South America)
@@ -155,20 +192,10 @@ html(lang="en")
                 | Scuba diving and apnea (more than 50 dives)
                 br
                 | Volley Ball (played for 10 years)
-    .container-fluid
+    //-.container-fluid
       .row
         .col-xs-12
           p Brunch, coffee script, jade, sass, bootstrap, custom webfonts
-    script(src="app.js")
-    script.
-      WebFontConfig = {
-        google: {
-          families: ['Ubuntu']
-        }
-      };
-      (function(d) {
-        var wf = d.createElement('script'), s = d.scripts[0];
-        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
-        s.parentNode.insertBefore(wf, s);
-      })(document);
+    //-script(src="app.js")
+    //-script.
       require('application').init();

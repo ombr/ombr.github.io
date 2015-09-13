@@ -18,7 +18,7 @@ App =
           }
       list_sections()
 
-      animate = (event)->
+      animate = (event, elem)->
         return if animating
         animating = true
         current_height = $('.c-mosaic').height()
@@ -26,7 +26,10 @@ App =
         $body.toggleClass('summary')
         future_height = $('.c-mosaic').height()
         future_document_height = $(document).height()
-        $('.c-mosaic').css('min-height', Math.max(current_height, future_height))
+        $('.c-mosaic').css(
+          'min-height',
+          Math.max(current_height, future_height)
+        )
         $window.scrollTop(scrollTop)
 
         if $body.hasClass('summary')
@@ -35,8 +38,7 @@ App =
           if scroll + window_height > future_document_height
             scroll = future_document_height - window_height
         else
-          console.log this
-          scroll = $(this).offset().top
+          scroll = $(elem).offset().top
         animation = _.map sections, (section)->
           offset = section.jquery.offset()
           {
@@ -68,6 +70,11 @@ App =
         })
         $(".c-mosaic").addClass("animate")
         $.Velocity.RunSequence(animation)
-      $body.on 'click', '.c-mosaic-item', animate
-      $body.addClass('summary')
+      $body.on 'click', '.c-close', (event)->
+        animate(event, null)
+      $body.on 'click', '.c-mosaic-item', (event)->
+        if $body.hasClass('summary')
+          animate(event, this)
+      # if $body.width() <= 600
+      #   $body.addClass('summary')
 module.exports = App

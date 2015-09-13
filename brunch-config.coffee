@@ -10,7 +10,15 @@ exports.config =
   plugins:
     jaded:
       jade:
-        pretty: false
+        pretty: true
     sass:
       options:
         includePaths: ['bower_components/']
+    appcache:
+      network: ['*']
+      fallback: {}
+    imageoptimizer:
+        smushit: true
+        path: 'images'
+  conventions:
+    assets: /(assets|font)/
