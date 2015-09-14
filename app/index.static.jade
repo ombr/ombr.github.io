@@ -45,12 +45,13 @@ html(lang="en" manifest="/appcache.appcache")
 
         //- Default source for desktop
         - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
+        - var imageurl = 'images/bandeau.jpg?w='
         - var srcset="";
         each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
           - srcset = srcset + imageurl + width + " " + width + "w, ";
         - srcset = srcset + imageurl + "5000 5000w";
         source(media="(min-width: 800px)" srcset="#{srcset}" sizes="100vw")
-        img(
+        img.img-responsive(
           alt='Luc Boissaye'
           src="#{imageurl}2000"
           srcset="#{srcset}"

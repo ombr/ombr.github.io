@@ -7,6 +7,7 @@
     "font-awesome": "fontawesome#~4.4.0",
     "jquery": "~2.1.4",
     "lodash": "~3.10.1",
+    "picturefill": "~3.0",
     "velocity": "~1.2.2"
   },
   "overrides": {
@@ -15,7 +16,9 @@
       "dependencies": {}
     },
     "font-awesome": {
-      "main": ["fonts"]
+      "main": [
+        "fonts"
+      ]
     }
   }
 }
