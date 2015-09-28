@@ -163,18 +163,47 @@ $font-family-base:           $font-family-monospace
 // .media .imgExt{float:right margin-left: 10px}
 
 
+.c-hello
+  min-height: 27em
+  position: relative
 .c-hello-image
   img
-    min-height: 600px
     background: #C4C4C4
   position: relative
 .c-hello-image
   width: 100%
 .c-hello-content
   padding: $grid-gutter-width/2
-  @media(min-width: 830px)
+  @media(min-width: 850px)
     position: absolute
-    top: 30%
+    top: 10%
     left: 55%
-    @media(max-width: 1000px)
-      top: 10%
+
+
+@media print
+  .c-hello-link
+    display: none
+  body
+    font-size: 14px
+  .c-hello-image
+    display: none !important
+  .c-hello
+    min-height: 0 !important
+  .c-mosaic-title
+    margin: 0
+  h2
+    color: $gray-lightest !important
+    font-size: 1.5em !important
+    margin-bottom: .25em !important
+  h3
+    font-size: 1.25em !important
+    margin: 0
+  p
+    margin: 0 0 0 1em
+  body
+    font-size: 0.75em
+  .container
+    max-width: 100% !important
+  @page
+    size: 21cm 29.7cm
+    margin: 0 0 0 0

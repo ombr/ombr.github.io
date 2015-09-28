@@ -1,6 +1,6 @@
 doctype html
-//-html(lang="en")
-html(lang="en" manifest="/appcache.appcache")
+//-html(lang="en" manifest="/appcache.appcache")
+html(lang="en")
   head
     meta(content='black-translucent' name='apple-mobile-web-app-status-bar-style')
     meta(content='yes' name='apple-mobile-web-app-capable')
@@ -35,8 +35,8 @@ html(lang="en" manifest="/appcache.appcache")
         i.fa.fa-close
     .c-hello
       picture.c-hello-image
-        - var imageurl = 'images/bandeau.jpg?w='
         //- mobile and co :
+        - var imageurl = 'images/bandeau.jpg?w='
         - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=crop&crop=faces&w='
         each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
           - srcset = srcset + imageurl + width + "&h="+ width + " " + width + "w, ";
@@ -44,8 +44,8 @@ html(lang="en" manifest="/appcache.appcache")
         source(media="(max-width: 830px)" sizes="100vw" srcset="#{srcset}")
 
         //- Default source for desktop
-        - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
         - var imageurl = 'images/bandeau.jpg?w='
+        - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
         - var srcset="";
         each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
           - srcset = srcset + imageurl + width + " " + width + "w, ";
@@ -56,12 +56,14 @@ html(lang="en" manifest="/appcache.appcache")
           src="#{imageurl}2000"
           srcset="#{srcset}"
           sizes="100vw"
+          width='2000'
+          height='995'
         )
       .c-hello-content
         h1.c-hello-title
           | Bonjour, my name is Luc !
         h2.c-hello-subtitle I am passionate about creating software people use and about discovering the world.
-        p
+        p.c-hello-link
           a.btn.btn-secondary-outline.btn-lg(href="http://www.google.com/recaptcha/mailhide/d?k=01_a2HOHLoiyuUDNqnhKZAEQ==&c=LKUn8S8RhBnptd6d_b7Ufw==" target="_blank")
             i.fa.fa-envelope
           =" "
@@ -231,6 +233,8 @@ html(lang="en" manifest="/appcache.appcache")
       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
       ga('create', 'UA-28606937-2', 'auto');
       ga('send', 'pageview');
-    //-script(src="app.js")
+    script(src="app.js")
+    script.
+      require('picturefill')
     //-script.
       require('application').init();
