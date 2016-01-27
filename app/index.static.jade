@@ -34,31 +34,38 @@ html(lang="en")
       a.btn.btn-link
         i.fa.fa-close
     .c-hello
-      picture.c-hello-image
-        //- mobile and co :
-        - var imageurl = 'images/bandeau.jpg?w='
-        - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=crop&crop=faces&w='
-        each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
-          - srcset = srcset + imageurl + width + "&h="+ width + " " + width + "w, ";
-        - srcset = srcset + imageurl + "5000 5000w";
-        source(media="(max-width: 830px)" sizes="100vw" srcset="#{srcset}")
 
+      picture.c-hello-image
+
+        //- mobile and co :
+        // - var imageurl = 'images/bandeau.jpg?w='
+        // - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=crop&crop=faces&w='
+        // each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
+        //   - srcset = srcset + imageurl + width + "&h="+ width + " " + width + "w, ";
+        // - srcset = srcset + imageurl + "5000 5000w";
+
+        - srcset="/images/luc.boissaye_es08uv_c_scale,w_50.jpg 50w, /images/luc.boissaye_es08uv_c_scale,w_447.jpg 447w, /images/luc.boissaye_es08uv_c_scale,w_696.jpg 696w, /images/luc.boissaye_es08uv_c_scale,w_830.jpg 830w"
+        source(media="(max-width: 830px)" sizes="100vw" srcset="#{srcset}")
         //- Default source for desktop
-        - var imageurl = 'images/bandeau.jpg?w='
-        - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
-        - var srcset="";
-        each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
-          - srcset = srcset + imageurl + width + " " + width + "w, ";
-        - srcset = srcset + imageurl + "5000 5000w";
-        source(media="(min-width: 800px)" srcset="#{srcset}" sizes="100vw")
+        // - var imageurl = 'images/bandeau.jpg?w='
+        // - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
+        // - var srcset="";
+        // each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
+        //   - srcset = srcset + imageurl + width + " " + width + "w, ";
+        // - srcset = srcset + imageurl + "5000 5000w";
+        // source(media="(min-width: 800px)" srcset="#{srcset}" sizes="100vw")
+        //- Desktop :
+        - srcset="/images/bandeau_d10zun_c_scale,w_190.jpg 190w, /images/bandeau_d10zun_c_scale,w_1196.jpg 1196w, /images/bandeau_d10zun_c_scale,w_1668.jpg 1668w, /images/bandeau_d10zun_c_scale,w_2012.jpg 2012w, /images/bandeau_d10zun_c_scale,w_2279.jpg 2279w, /images/bandeau_d10zun_c_scale,w_2473.jpg 2473w, /images/bandeau_d10zun_c_scale,w_2671.jpg 2671w, /images/bandeau_d10zun_c_scale,w_2843.jpg 2843w, /images/bandeau_d10zun_c_scale,w_3008.jpg 3008w, /images/bandeau_d10zun_c_scale,w_3144.jpg 3144w, /images/bandeau_d10zun_c_scale,w_3278.jpg 3278w, /images/bandeau_d10zun_c_scale,w_3408.jpg 3408w, /images/bandeau_d10zun_c_scale,w_3519.jpg 3519w, /images/bandeau_d10zun_c_scale,w_3630.jpg 3630w, /images/bandeau_d10zun_c_scale,w_3736.jpg 3736w, /images/bandeau_d10zun_c_scale,w_3840.jpg 3840w"
+        source(media="(min-width: 800px)" sizes="(max-width: 3840px) 100vw, 3840px" srcset="#{srcset}")
         img.img-responsive(
           alt='Luc Boissaye'
-          src="#{imageurl}2000"
+          src="/images/bandeau_d10zun_c_scale,w_3840.jpg"
           srcset="#{srcset}"
           sizes="100vw"
-          width='2000'
+          width='3840'
           height='995'
         )
+       // TODO ICI ! HEiGHT ^
       .c-hello-content
         h1.c-hello-title
           | Bonjour, my name is Luc !
