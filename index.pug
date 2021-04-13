@@ -1,0 +1,206 @@
+doctype html
+html(lang="en")
+  head
+    meta(content='black-translucent' name='apple-mobile-web-app-status-bar-style')
+    meta(content='yes' name='apple-mobile-web-app-capable')
+    meta(content='width=device-width, initial-scale=1.0' name='viewport')
+    title Luc Boissaye - I am passionate about creating software people use and about discovering the world.
+  body
+    .c-hello
+      picture.c-hello-image
+
+        //- mobile and co :
+        // - var imageurl = 'images/bandeau.jpg?w='
+        // - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=crop&crop=faces&w='
+        // each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
+        //   - srcset = srcset + imageurl + width + "&h="+ width + " " + width + "w, ";
+        // - srcset = srcset + imageurl + "5000 5000w";
+
+        - srcset="/images/luc.boissaye_es08uv_c_scale,w_50.jpg 50w, /images/luc.boissaye_es08uv_c_scale,w_447.jpg 447w, /images/luc.boissaye_es08uv_c_scale,w_696.jpg 696w, /images/luc.boissaye_es08uv_c_scale,w_830.jpg 830w"
+        source(media="(max-width: 830px)" sizes="100vw" srcset="#{srcset}")
+        //- Default source for desktop
+        // - var imageurl = 'images/bandeau.jpg?w='
+        // - var imageurl = '//lucboissaye.imgix.net/images/bandeau.jpg?fit=clip&w='
+        // - var srcset="";
+        // each width in [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2500, 3000, 4000]
+        //   - srcset = srcset + imageurl + width + " " + width + "w, ";
+        // - srcset = srcset + imageurl + "5000 5000w";
+        // source(media="(min-width: 800px)" srcset="#{srcset}" sizes="100vw")
+        //- Desktop :
+        - srcset="/images/bandeau_d10zun_c_scale,w_190.jpg 190w, /images/bandeau_d10zun_c_scale,w_1196.jpg 1196w, /images/bandeau_d10zun_c_scale,w_1668.jpg 1668w, /images/bandeau_d10zun_c_scale,w_2012.jpg 2012w, /images/bandeau_d10zun_c_scale,w_2279.jpg 2279w, /images/bandeau_d10zun_c_scale,w_2473.jpg 2473w, /images/bandeau_d10zun_c_scale,w_2671.jpg 2671w, /images/bandeau_d10zun_c_scale,w_2843.jpg 2843w, /images/bandeau_d10zun_c_scale,w_3008.jpg 3008w, /images/bandeau_d10zun_c_scale,w_3144.jpg 3144w, /images/bandeau_d10zun_c_scale,w_3278.jpg 3278w, /images/bandeau_d10zun_c_scale,w_3408.jpg 3408w, /images/bandeau_d10zun_c_scale,w_3519.jpg 3519w, /images/bandeau_d10zun_c_scale,w_3630.jpg 3630w, /images/bandeau_d10zun_c_scale,w_3736.jpg 3736w, /images/bandeau_d10zun_c_scale,w_3840.jpg 3840w"
+        source(media="(min-width: 800px)" sizes="(max-width: 3840px) 100vw, 3840px" srcset="#{srcset}")
+        img.img-responsive(
+          alt='Luc Boissaye'
+          src="/images/bandeau_d10zun_c_scale,w_3840.jpg"
+          srcset="#{srcset}"
+          sizes="100vw"
+          width='3840'
+          height='995'
+        )
+      .c-hello-content
+        h1.c-hello-title
+          | Bonjour, my name is Luc !
+        h2.c-hello-subtitle I am passionate about creating software people use and about discovering the world.
+        p.c-hello-link
+          a.btn.btn-secondary-outline.btn-lg(href="http://www.google.com/recaptcha/mailhide/d?k=01_a2HOHLoiyuUDNqnhKZAEQ==&c=LKUn8S8RhBnptd6d_b7Ufw==" target="_blank")
+            i.fa.fa-envelope
+          =" "
+          a.btn.btn-secondary-outline.btn-lg(href="https://twitter.com/ombr" target="_blank")
+            i.fa.fa-twitter
+          =" "
+          a.btn.btn-secondary-outline.btn-lg(href="https://linkedin.com/in/lucboissaye" target="_blank")
+            i.fa.fa-linkedin
+          =" "
+          a.btn.btn-secondary-outline.btn-lg(href="https://github.com/ombr" target="_blank")
+            i.fa.fa-github
+    .c-mosaic
+      section.c-mosaic-item.c-experience#experiences
+        .container
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title Jobs
+              h3.c-mosaic-subtitle I worked for SharinPix, Agorize, Gutenberg Technology...
+          .row.c-mosaic-content
+            .col-sm-12
+              h2.c-mosaic-title Jobs
+            .col-sm-8
+              .row
+                .col-sm-12
+                  h3.c-experience-title SharinPix
+                  p.c-experience-details Since March 2015 in Paris and Mauritius
+                  p.c-experience-content Conceived and developed an image management system integrated into salesforce.
+                .col-sm-12
+                  h3.c-experience-title Agorize
+                  p.c-experience-details 2 years from November 2012 to October 2014 in Paris
+                  p.c-experience-content Evolved a generic service for challenge management provided to Google, Bank of America, Microsoft, Canal+, PagesJaunes...
+                .col-sm-12
+                  h3.c-experience-title Gutenberg technology
+                  p.c-experience-details One year from in may 2011 to november 2012 in Paris and San Francisco
+                  p.c-experience-content Conceived and developed a platform to publish book on multi-support (print-web-tablet)
+                .col-sm-12
+                  h3.c-experience-title DS Improve
+                  p.c-experience-details 4 months at 16 years old in Brussels
+                  p.c-experience-content Developed websites in PHP and Flash
+            .col-sm-4
+              .row
+                .col-sm-12
+                  h3.c-experience-title Famoco
+                  p.c-experience-details 2 months in 2015 in Paris
+                  p.c-experience-content Created a prototype of an offline mobile app synchronized with salesforce.
+                .col-sm-12
+                  h3.c-experience-title NDS
+                  p.c-experience-details 2 month of internship in Munich during my studies
+                  p.c-experience-content Developed testing framework for satellite TV box
+                .col-sm-12
+                  h3.c-experience-title Spoon Consulting
+                  p.c-experience-details 2 weeks in 2014
+                  p.c-experience-content In 2014, I trained seven spooners for 2 weeks on Ruby on Rails on heroku in Mauritius.
+      section.c-mosaic-item#education
+        .container
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title Studies
+              h3.c-mosaic-subtitle I studied computer sciences and aplied mathematics...
+          .row.c-mosaic-content
+            .col-sm-12
+              h2.c-mosaic-title  Studies
+            .col-sm-12
+              .eduction
+                h3 GRENOBLE INSTITUTE OF TECHNOLOGY - ENSIMAG
+                p.small From 2009 to 2012 in Grenoble and Singapore
+                p Engineering of Information Systems, master degree with mention bien
+              p.more
+                |I learned computer sciences (algorithms, computer architecture, language theory, databases...) and mathematics (probabilities, statistics, analysis,...)
+                |I also participated in a research project(link) and made a semester in Singapore.
+              p.more Before I did Scientific Preparatory class where I studied Math and Physics at lycee ORT in Strasbourg and had my Scientific Baccalauréat Speciality Mathematics, Option Engineering sciences, Mention Bien in Saint-Louis Alsace
+      section.c-mosaic-item#skills
+        .container
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title  Skills
+              h3.c-mosaic-subtitle I can work on all part of an application...
+          .row.c-mosaic-content
+            .col-md-12
+              h2.c-mosaic-title Skills
+            .col-sm-4
+              h3 Software
+              p I am passionate about software developement techniques particularly test driven development and extreme programming.
+            .col-sm-4
+              h3 Web
+              p I know web technologies and know how to make fast responsive websites.
+            .col-sm-4
+              h3 Tooling
+              p I know and use git, vim, ubuntu and OSX.
+          .row.c-mosaic-content
+            .col-sm-4
+              h3 Deployment
+              p I am very familiar with heroku ecosystem and previously managed virtual servers in production.
+            .col-sm-4
+              h3 Math
+              p I have a strong background in mathematics particularly statistics, probabilities, linear algebra and analysis
+            .col-sm-4
+              h3 Languages
+              p
+                |English - Fluent
+                br
+                |Spanish - I can express myself and understand common situations.
+      section.c-mosaic-item#technologies
+        .container
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title Tech
+              h3.c-mosaic-subtitle My favorites tools...
+          .row.c-mosaic-content
+            .col-sm-12
+              h2.c-mosaic-title Technologies
+            .col-sm-12
+              p I like to create :
+              ul
+                li develop RubyOnRails backend tested with rspec
+                li use AngularJS to create fast single wepage app.
+                li Style crossbrowser responsive webpage with sass, bourbon and bootstrap
+                li Host fast and scalable applications on Heroku with Amazon cloudfront, route53 and S3
+                li write scipts packed with regular expressions to improve my life
+                li create mobile apps with ionic
+
+      section#more.c-mosaic-item
+        .container
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title Projects
+              h3.c-mosaic-subtitle I like to experiment during my free time...
+          .row.c-mosaic-content
+            .col-sm-12
+              h2.c-mosaic-title Projects
+            .col-sm-12
+              p.c-mosaic-subtitle I like to experiment during my free time, here are my last projects
+            .col-sm-12
+              p
+                a.btn.btn-link(href="http://www.la-boite-a-reves.fr/" target="_blank") La boite a reves
+
+                =" "
+                a.btn.btn-link(href="http://www.evlaa.com" target="_blank") Evlaa
+                =" "
+                a.btn.btn-link(href="http://www.studiocuicui.com" target="_blank") Studio Cuicui
+      section#fun.c-mosaic-item
+        .container
+          .row.c-mosaic-summary
+            .col-sm-12
+              h2.c-mosaic-title Fun
+              h3.c-mosaic-subtitle I am doing more than coding...
+          .row.c-mosaic-content
+            .col-sm-12
+              h2.c-mosaic-title Fun
+            .col-sm-12
+              p
+                | Travelling ( learned Spanish for 4 months in South America)
+                br
+                | Improvisational theatre (member of Les imprevus for two years)
+                br
+                | Scuba diving and apnea (more than 50 dives)
+                br
+                | Volley Ball (played for 10 years)
+    //-.container-fluid
+      .row
+        .col-xs-12
+          p Brunch, coffee script, jade, sass, bootstrap, custom webfonts

@@ -1,27 +1,21 @@
 {
-  "name": "your-app",
-  "description": "Description",
-  "author": "Your Name",
+  "name": "luc.boissaye.fr",
+  "description": "My website",
+  "author": "Luc Boissaye",
   "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/ombr/ombr.github.io.git"
   },
   "scripts": {
-    "start": "./node_modules/.bin/brunch watch --server"
+    "start": "eleventy --serve"
   },
   "dependencies": {
-    "appcache-brunch": "^1.7.1",
-    "auto-reload-brunch": ">= 1.0 < 1.9",
-    "clean-css-brunch": ">= 1.0 < 1.9",
-    "coffee-script-brunch": "^1.8.2",
-    "coffeelint-brunch": "^1.7.0",
-    "css-brunch": ">= 1.0 < 1.9",
-    "imageoptmizer-brunch": "0.0.6",
-    "jaded-brunch": "^1.7.13",
-    "javascript-brunch": ">= 1.0 < 1.9",
-    "uglify-js-brunch": ">= 1.0 < 1.9",
-    "brunch": "^1.8.5",
-    "sass-brunch": "^1.8.11"
+    "clean-css": "^5.1.2"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^0.12.1",
+    "normalize.css": "^8.0.1",
+    "sass": "^1.32.8"
   }
 }
