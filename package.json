@@ -10,10 +10,10 @@
   "scripts": {
     "start": "npm-run-all clean --parallel dev:*",
     "clean": "rimraf _site",
-    "build": "NODE_ENV=production npm-run-all clean prod:postcss",
+    "build": "NODE_ENV=production npm-run-all clean prod:postcss prod:eleventy",
     "dev:eleventy": "eleventy --serve",
     "dev:postcss": "postcss -w index.css -o _site/index.css",
-    "prod:postcss": "postcss -w index.css -o _site/index.css",
+    "prod:postcss": "postcss index.css -o _site/index.css",
     "prod:eleventy": "ELEVENTY_ENV=production eleventy"
   },
   "devDependencies": {
