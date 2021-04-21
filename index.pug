@@ -4,7 +4,7 @@ tags:
   - dev
 layout: layout.pug
 ---
-.w-screen.h-screen
+//.w-screen.h-screen
   .text-5xl.text-gray-600.font-sans Bonjour, my name is Luc !
   .text-xl.font-serif I am passionate about creating software people use and about discovering the world.
 .container.mx-auto
@@ -13,6 +13,7 @@ layout: layout.pug
       li
       - console.log(post)
         a.text-xl(href=post.data.page.url) #{post.data.title}
+  div !{my_image('./luc.boissaye.jpg', 'Luc Boissaye', [200, 400, 800, 1600, 3200, 4800])}
 //.c-hello
   picture.c-hello-image
     //- mobile and co :
