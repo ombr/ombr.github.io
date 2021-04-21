@@ -11,9 +11,9 @@ layout: layout.pug
   ul
     each post in collections.post
       li
-      - console.log(post)
+        //- console.log(post)
         a.text-xl(href=post.data.page.url) #{post.data.title}
-  div !{my_image('./luc.boissaye.jpg', 'Luc Boissaye', [200, 400, 800, 1600, 3200, 4800])}
+  div !{my_image('./luc.boissaye.jpg', 'plop', 'Luc Boissaye', '100vw', [400, 800, 1600, 3200, 4800])}
 //.c-hello
   picture.c-hello-image
     //- mobile and co :

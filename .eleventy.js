@@ -1,10 +1,6 @@
 const Image = require("@11ty/eleventy-img");
-my_image = function(src, alt, sizes) {
-  let options = {
-    widths: sizes,
-    formats: ["avif", "webp", "jpeg"],
-    outputDir: '_site/img'
-  }
+my_image = function(src, cls, alt, sizes, widths) {
+  let options = { widths: widths, formats: ["avif", "jpeg"], outputDir: '_site/img' };
   Image(src, options)
   return Image.generateHTML(Image.statsSync(src, options),
     {
