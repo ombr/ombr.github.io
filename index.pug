@@ -4,16 +4,19 @@ tags:
   - dev
 layout: layout.pug
 ---
-//.w-screen.h-screen
-  .text-5xl.text-gray-600.font-sans Bonjour, my name is Luc !
-  .text-xl.font-serif I am passionate about creating software people use and about discovering the world.
-.container.mx-auto
-  ul
-    each post in collections.post
-      li
-        //- console.log(post)
-        a.text-xl(href=post.data.page.url) #{post.data.title}
-  div !{my_image('./luc.boissaye.jpg', 'plop', 'Luc Boissaye', '100vw', [400, 800, 1600, 3200, 4800])}
+.container.mx-auto.p-3
+  .text-5xl.my-3.text-gray-600.font-sans Bonjour, my name is Luc !
+  .text-xl.my-3.font-serif I am passionate about creating software people use and about discovering the world.
+  div.my-5 !{my_image('./luc.boissaye.jpg', 'mx-auto w-auto max-h-full', 'Luc Boissaye', '100vw', [400, 800, 1600, 3200, 4800])}
+.container.mx-auto.p-3
+  .prose
+    h3 Blog
+    ul
+      each post in collections.post
+        li
+          //- console.log(post)
+          a.text-xl(href=post.data.page.url) #{post.data.title}
+  // include ./posts/2021-04-14-it_is_2021.md
 //.c-hello
   picture.c-hello-image
     //- mobile and co :

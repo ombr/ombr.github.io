@@ -10,9 +10,10 @@
   "scripts": {
     "start": "npm-run-all clean --parallel dev:*",
     "clean": "rimraf _site",
-    "build": "NODE_ENV=production npm-run-all clean prod:postcss prod:eleventy",
+    "build": "NODE_ENV=production npm-run-all clean sqip prod:postcss prod:eleventy",
     "dev:eleventy": "eleventy --serve",
     "dev:postcss": "postcss -w index.css -o _site/index.css",
+    "sqip": "sqip -i ./*.jpg -w 500 -p primitive -p blur -p svgo",
     "prod:postcss": "postcss index.css -o _site/index.css",
     "prod:eleventy": "ELEVENTY_ENV=production eleventy"
   },
@@ -21,9 +22,11 @@
     "@11ty/eleventy-img": "^0.8.3",
     "@tailwindcss/typography": "^0.4.0",
     "autoprefixer": "^10.2.5",
+    "mini-svg-data-uri": "^1.2.3",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^8.3.1",
     "rimraf": "^3.0.2",
+    "sqip-cli": "^1.0.0-alpha.36",
     "tailwindcss": "^2.1.1"
   },
   "engines": {
